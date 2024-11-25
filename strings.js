@@ -48,9 +48,52 @@ const number2 = 20;
 // console.log(`Number ${number1} plus number ${number2} = ${number1 + number2}`);
 
 // Escape sequences
-// const sentence = 'My dog\'s is Sally!'; 
+// const sentence = 'My dog\'s is Sally!';
 // const sentence = "My dog's is Sally!";
 // const sentence = "My dog's is \nSally!";
 const sentence = "My dog's is \tSally!";
 // console.log(sentence);
-console.log(sentence.charAt(1));
+// console.log(sentence.charAt(1));
+// console.log(sentence.at(5));
+// console.log(sentence.at(-5));
+
+const sampleString = "something1";
+const sampleString2 = "something2";
+// console.log(sampleString.concat("This is ", "aaaaa", "bbbbbb"));
+
+// console.log('This is string.'.concat(' Example!')); // Invoking an instance method from a string literal.
+
+// console.log(sampleString2.includes("2"));
+
+// const sliceSample = sampleString.slice(2, -5);
+// console.log(sliceSample);
+
+// const splitSampleString = "asdasda@asdgasdga@adgasgas@agas";
+// console.log(splitSampleString.split("@"));
+
+// Task 1
+const task1String = " This statement has empty spaces ";
+console.log(task1String.includes("This"));
+console.log(task1String.at(-3));
+
+const someVariableNames = task1String.trim();
+console.log(someVariableNames);
+
+console.log(task1String.toLowerCase());
+
+// Task 2
+console.log(
+  "Jack and Jill went up the hill to fetch a pail of water. \nJack fell down and broke his crown and Jill came tumbling after."
+);
+
+// Task 3
+const firstName = "John";
+const lastName = "Smith";
+
+console.log(firstName + " " + lastName);
+console.log(`${firstName} ${lastName}`);
+console.log(firstName.concat(" ", lastName));
+
+// Task 4
+const numberTwo = 2;
+console.log(`The number is ${numberTwo * 100}.`);
