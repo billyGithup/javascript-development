@@ -47,4 +47,10 @@ const separator3 = 0xa0_b0_c0;
 // Static Number methods
 // console.log(Number.isNaN(20e-10));
 // console.log(Number.isInteger(2.0));
-console.log(Number.parseInt(10.999));
+// console.log(Number.parseInt(10.999));
+// console.log(parseFloat("10.99"));
+
+const value1 = 20;
+// console.log(value1.toExponential(5));
+// console.log(value1.toFixed(5));
+// console.log(value1.toPrecision(6));
