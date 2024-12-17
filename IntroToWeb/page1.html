@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 1</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <style>
+      div {
+        text-align: center;
+      }
+      h2 {
+        color: white;
+      }
+      .outside {
+        padding: 16px;
+        background-color: green;
+        width: 884px;
+        position: relative;
+      }
+      .top {
+        width: 868px;
+        background-color: white;
+      }
+      .sides {
+        width: 150px;
+        background-color: red;
+      }
+      .center {
+        width: 568px;
+        background-color: lightblue;
+      }
+      .sides,
+      .center {
+        height: 400px;
+        display: inline-block;
+      }
+      .bottom {
+        width: 868px;
+        height: 30px;
+        background-color: blue;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Horizontal Navigation -->
+    <div>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" class="active">Page 1</a></li>
+        <li><a href="page2.html">Page 2</a></li>
+        <li><a href="page3.html">Page 3</a></li>
+      </ul>
+    </div>
+
+    <div class="banner"></div>
+
+    <div class="outside">
+      <div class="top">
+        <h1>Header Section</h1>
+      </div>
+      <div class="sides">
+        <p>Left div section</p>
+      </div>
+      <div class="center" id="center">
+        <p>Center div section</p>
+      </div>
+      <div class="sides">
+        <p>Right div section</p>
+      </div>
+      <div class="bottom">
+        <h2>Footer div section</h2>
+      </div>
+    </div>
+
+    <button id="sample">Click Me</button>
+
+    <script>
+      document.getElementById("sample").addEventListener("click", doSomething);
+
+      function doSomething() {
+        console.log("Click event was fired or triggered!");
+      }
+
+      window.onload = () => {
+        console.log("This string got logged out when the page is loaded!");
+      };
+
+      document
+        .getElementById("center")
+        .addEventListener("dblclick", () =>
+          console.log("Double click event was triggered!")
+        );
+    </script>
+  </body>
+</html>

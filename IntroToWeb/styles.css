@@ -1,0 +1,49 @@
+/* index page */
+h1 {
+  color: green;
+}
+
+a {
+  background-color: yellowgreen;
+}
+
+.cool-class {
+  color: blue;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: lightslategray;
+}
+
+.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #333;
+}
+
+.active {
+  background-color: #5448c8;
+}
+
+.nav li {
+  float: left;
+}
+
+/* page1 */
+.banner {
+  /* width: 500px; */
+  height: 200px;
+  /* display: inline-block; */
+  /* background-color: yellow; */
+  background-image: url("https://i.ibb.co/GckCvqJ/dog-image7.jpg");
+  background-repeat: repeat-x;
+}
