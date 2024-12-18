@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 3</title>
+    <style>
+      .person,
+      .movie-choice {
+        margin: 36px;
+        border: 5px dotted black;
+        padding: 16px;
+        width: 400px;
+      }
+
+      #fname,
+      #addr,
+      #lname,
+      #phone {
+        width: 350px;
+        height: 30px;
+      }
+
+      label {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      #btn-form {
+        margin-left: 36px;
+        height: 60px;
+        width: 195px;
+        background-color: lightgoldenrodyellow;
+        /* border: 0; */
+        border-radius: 20px;
+        font-size: 30px;
+      }
+
+      .nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: lightslategray;
+      }
+
+      .nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .nav li a:hover {
+        background-color: #333;
+      }
+
+      .active {
+        background-color: #5448c8;
+      }
+
+      .nav li {
+        float: left;
+      }
+
+      a {
+        background-color: yellowgreen;
+      }
+
+      .cool-class {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Horizontal Navigation -->
+    <div>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page1.html">Page 1</a></li>
+        <li><a href="page2.html">Page 2</a></li>
+        <li><a href="#" class="active">Page 3</a></li>
+      </ul>
+    </div>
+    <br /><br />
+    <form onsubmit="myInfo(event)">
+      <!-- Person information -->
+      <div class="person">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" oninput="changeEvent()" />
+        <br />
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" />
+        <br />
+        <label for="addr">Address:</label>
+        <input type="text" id="addr" name="addr" onblur="blurEvent()" />
+        <br />
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" />
+      </div>
+
+      <!-- Radio buttons for movie genres -->
+      <div class="movie-choice">
+        <input type="radio" id="a" name="movie" value="action" />
+        <label for="a">Action</label>
+        <br />
+        <input type="radio" id="b" name="movie" value="comedy" />
+        <label for="b">Comedy</label>
+        <br />
+        <input type="radio" id="c" name="movie" value="drama" />
+        <label for="c">Drama</label>
+        <br />
+        <input type="radio" id="d" name="movie" value="scifi" />
+        <label for="d">Scifi</label>
+        <br />
+        <input type="radio" id="e" name="movie" value="romance" />
+        <label for="e">Romance</label>
+        <br />
+        <input type="radio" id="f" name="movie" value="thriller" />
+        <label for="f">Thriller</label>
+      </div>
+
+      <button id="btn-form" type="submit">Submit</button>
+    </form>
+
+    <div class="person">
+      <p id="my-name"></p>
+      <p id="movie-choice"></p>
+    </div>
+
+    <script>
+      function changeEvent() {
+        console.log("The event happened!");
+      }
+
+      function blurEvent() {
+        console.log("The onblur event happened!");
+      }
+
+      const getMovieChoice = () => {
+        const movieChoice = document.getElementsByName("movie");
+
+        for (let index = 0; index < movieChoice.length; index++) {
+          if (movieChoice[index].checked) {
+            return "Movie Genre: " + movieChoice[index].value;
+          }
+        }
+      };
+
+      function myInfo(e) {
+        e.preventDefault();
+        const firstName = document.getElementById("fname").value;
+        const lastName = document.getElementById("lname").value;
+        const address = document.getElementById("addr").value;
+        const phoneNumber = document.getElementById("phone").value;
+        const movieChoice = getMovieChoice();
+
+        document.getElementById("my-name").innerHTML =
+          firstName + " " + lastName;
+        document.getElementById("movie-choice").innerHTML = movieChoice;
+      }
+    </script>
+  </body>
+</html>
