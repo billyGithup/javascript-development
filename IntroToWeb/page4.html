@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 4</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+  </head>
+  <body>
+    <!-- Horizontal Navigation -->
+    <div>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page1.html">Page 1</a></li>
+        <li><a href="page2.html">Page 2</a></li>
+        <li><a href="page3.html">Page 3</a></li>
+        <li><a href="#" class="active">Page 4</a></li>
+      </ul>
+    </div>
+
+    <div class="lab">
+      <h1>My favorite types of pizza</h1>
+      <ol class="my-roman" id="pizza">
+        <li>Neapolitan Pizza</li>
+        <li>Chicago Pizza</li>
+        <li>New York Pizza</li>
+        <li>Sicilian Pizza</li>
+        <li>Greek Pizza</li>
+      </ol>
+      <button onclick="pizzaList()">Change List Notation</button>
+    </div>
+
+    <div class="lab">
+      <form>
+        <label>The values below will be added together.</label>
+        <br />
+        <input type="text" id="num1" name="num1" />
+        <input type="text" id="num2" name="num2" />
+        <p id="total"></p>
+        <button type="button" onclick="addThem()">Total</button>
+      </form>
+    </div>
+
+    <script>
+      const addThem = () => {
+        let total;
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+
+        total = parseFloat(num1) + parseFloat(num2);
+
+        document.getElementById("total").innerHTML = total;
+      };
+
+      function pizzaList() {
+        document.getElementById("pizza").classList.toggle("my-roman");
+      }
+    </script>
+  </body>
+</html>
