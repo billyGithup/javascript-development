@@ -1,5 +1,5 @@
 const name = "Joe";
-const height = "7 ft";
+const height = 7;
 const message = `${name} is ${height} tall.`;
 
 function isEven(number) {
@@ -18,7 +18,7 @@ const getData = () => {
           email: "jonsnow@gmail.com"
         })
       );
-    }, 2000);
+    }, 3000);
   });
 };
 
