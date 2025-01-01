@@ -6,6 +6,19 @@ const fs = require("fs");
 
 exports.checkYorN = (input) => "ynYN".includes(input) && input.length == 1;
 
+const showMenu = (menuData) => {
+  let menuNumbers = "";
+
+  for (let index = 0; index < menuData.length; index++) {
+    const arr = [...menuData[index]];
+    arr.splice(1, 0, " - $");
+    menuNumbers += (index + 1).toString();
+    console.log(`${index + 1}. ${arr.join("")}`);
+  }
+
+  return menuNumbers;
+};
+
 exports.chooseYourBun = () => {
   const buns = Object.entries(bun);
 
