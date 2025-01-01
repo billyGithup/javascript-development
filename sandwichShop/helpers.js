@@ -1,5 +1,6 @@
 const bun = require("./ingredients/buns.json");
 const cheeseData = require("./ingredients/cheeses.js");
+const veggies = require("./ingredients/vegetables.json");
 const prompt = require("prompt-sync")({ sigint: true });
 const fs = require("fs");
 
@@ -48,19 +49,77 @@ exports.chooseYourCheese = () => {
 
 exports.chooseYourMeat = () => {
   try {
-    const meatData = fs.readFileSync(
-      "sandwichShop\\ingredients\\meats.txt",
-      "utf8",
-      { encoding: "utf8" }
-    );
+    const meatData = fs
+      .readFileSync("sandwichShop\\ingredients\\meats.txt", "utf8", {
+        encoding: "utf8"
+      })
+      .split("\r\n")
+      .slice(0, -1);
 
-    console.log(meatData);
+    for (let index = 0; index < meatData.length; index++) {
+      const meatMenu = [
+        `${index + 1}. `,
+        meatData[index].slice(0, -5),
+        " - $",
+        meatData[index].slice(-4, meatData[index].length)
+      ];
+
+      console.log(meatMenu.join(""));
+    }
+
+    console.log();
+
+    let meatChoice = prompt("Please choose your meat: ");
+    while (!("1234".includes(meatChoice) && meatChoice.length == 1)) {
+      meatChoice = prompt("Please enter only the numbers on the menu: ");
+    }
+
+    return meatData[parseInt(meatChoice) - 1];
   } catch (error) {
     console.log(error);
   }
 };
 
-"Chicken 1.99\n
-Beef 2.99\n
-Turkey 3.99\n
-Lamb 4.99"
+exports.chooseYourVeggies = () => {
+  const veggiesArr = Object.entries(veggies);
+
+  for (let index = 0; index < veggiesArr.length + 1; index++) {
+    if (index + 1 == veggiesArr.length + 1) {
+      console.log(`${index + 1}. All`);
+      break;
+    }
+    const arr = [...veggiesArr[index]];
+    arr.splice(1, 0, " - $");
+    console.log(`${index + 1}. ${arr.join("")}`);
+  }
+
+  console.log();
+
+  let veggieChoice = prompt("Please choose your vegetables: ");
+  while (!("12345".includes(veggieChoice) && veggieChoice.length == 1)) {
+    veggieChoice = prompt("Please enter only the numbers on the menu: ");
+  }
+
+  if (veggieChoice == "5") {
+    return veggiesArr;
+  } else return veggiesArr[parseInt(veggieChoice) - 1];
+};
+
+exports.getTotalCost = (sandwich) => {
+  let veggieTotalCost = 0;
+
+  if (sandwich.vegetables.length == 2 && sandwich.vegetables[0] != "object") {
+    veggieTotalCost += sandwich.vegetables[1];
+  } else {
+    for (let index = 0; index < sandwich.vegetables.length; index++) {
+      veggieTotalCost += sandwich.vegetables[index][1];
+    }
+  }
+
+  return (
+    sandwich.bun.pop() +
+    sandwich.cheese.pop() +
+    parseFloat(sandwich.meat.slice(-4)) +
+    veggieTotalCost
+  ).toFixed(2);
+};

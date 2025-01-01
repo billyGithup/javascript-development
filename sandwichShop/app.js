@@ -3,8 +3,11 @@ const {
   checkYorN,
   chooseYourBun,
   chooseYourCheese,
-  chooseYourMeat
+  chooseYourMeat,
+  chooseYourVeggies,
+  getTotalCost
 } = require("./helpers.js");
+const Sandwich = require("./sandwich.js");
 
 const shopTitle =
   "===========================================" +
@@ -26,7 +29,17 @@ console.log();
 if (userInput.toLowerCase() == "n") {
   console.log("Thank you for coming, bye!");
 } else {
-  // const bun = chooseYourBun();
-  // const cheese = chooseYourCheese();
+  const bun = chooseYourBun();
+  const cheese = chooseYourCheese();
   const meat = chooseYourMeat();
+  const vegetables = chooseYourVeggies();
+  const orderedSandwich = new Sandwich(bun, meat, vegetables, cheese);
+
+  console.log("Your sandwich is being made. Please wait...");
+
+  setTimeout(() => {
+    console.log("Your sandwich is ready!");
+    orderedSandwich.showInfo();
+    console.log(`\nTotal cost: $${getTotalCost(orderedSandwich)}`);
+  }, 6000);
 }
