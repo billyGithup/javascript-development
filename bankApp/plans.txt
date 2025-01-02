@@ -1,0 +1,104 @@
+===========================================
+||                                       ||
+||               ABC BANK                ||
+||                                       ||
+===========================================
+
+Welcome to ABC BANK!
+Do you have an account with us? Enter y for Yes or n for No: 
+Would you like to have an account with us? Enter y for Yes or n for No: 
+Thank you for visiting us. Have a nice day!
+
+Please enter a first name:
+Please enter a last name:
+Please create an account number: 
+Please enter a balance amount: 
+
+Your account has been created successfully!
+
+What would you like to do?
+1) Show balance
+2) Withdraw
+3) Deposit
+4) Show account information
+5) Delete account
+6) Exit
+
+Menu number: 
+
+Your current balance is $199
+
+What would you like to do?
+1) Show balance
+2) Withdraw
+3) Deposit
+4) Show account information
+5) Delete account
+6) Exit
+
+How much would you like to withdraw? 
+
+You do not have enough in your account to withdraw $
+
+What would you like to do?
+1) Show balance
+2) Withdraw
+3) Deposit
+4) Show account information
+5) Delete account
+6) Exit
+
+How much would you like to withdraw? 
+
+Withdraw: $
+Your current balance is $
+
+What would you like to do?
+1) Show balance
+2) Withdraw
+3) Deposit
+4) Show account information
+5) Delete account
+6) Exit
+
+How much would you like to deposit? 
+
+Deposit: $
+Your current balance is $
+
+What would you like to do?
+1) Show balance
+2) Withdraw
+3) Deposit
+4) Show account information
+5) Delete account
+6) Exit
+
+Name: John Smith
+Account Number: 12345
+Balance: $
+Created: 1/2/2025
+
+What would you like to do?
+1) Show balance
+2) Withdraw
+3) Deposit
+4) Show account information
+5) Delete account
+6) Exit
+
+The account has been deleted successfully!
+
+Please enter your account number: 
+Please enter only five digit numbers or more for the account number:
+
+Hello, John!
+
+What would you like to do?
+1) Show balance
+2) Withdraw
+3) Deposit
+4) Show account information
+5) Delete account
+6) Exit
+
