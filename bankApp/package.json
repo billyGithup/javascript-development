@@ -1,7 +1,7 @@
 {
   "name": "bankapp",
   "version": "1.0.0",
-  "description": "A basic bank console appliction/program",
+  "description": "A basic bank console application/program",
   "main": "bank.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
